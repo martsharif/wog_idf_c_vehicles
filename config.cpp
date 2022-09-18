@@ -441,9 +441,10 @@ class cfgVehicles
 	{
 		armor = 500;
 		armorStructural = 4.5;
+		minTotalDamageThreshold = 0.5;
 		weapons[] = {"rhs_weap_smokegen"};
 		magazines[] = {"rhs_mag_smokegen"};
-		hullExplosionDelay[] = {5,10};
+		hullExplosionDelay[] = {1,4};
 		driverOpticsModel = "\rhsusf\addons\rhsusf_optics\data\rhs_periscope_BISType";
 		memoryPointDriverOptics = "driverview_old";
 		redRpm = 3500;
@@ -610,7 +611,7 @@ class cfgVehicles
 			class HitLTrack: HitLTrack
 			{
 				material = -1;
-				armorComponent = "";
+				armorComponent = "hit_trackL";
 				name = "hit_trackL_point";
 				visual = "-";
 				radius = 0.2;
@@ -622,7 +623,7 @@ class cfgVehicles
 			class HitRTrack: HitRTrack
 			{
 				material = -1;
-				armorComponent = "";
+				armorComponent = "hit_trackR";
 				name = "hit_trackR_point";
 				visual = "-";
 				radius = 0.2;
@@ -837,14 +838,24 @@ class cfgVehicles
 				property = "rhs_ammoslot_4";
 			};
 		};
+		soundengineonint[] = {"\wog_idf_c_vehicles\sounds\land_vehicles\engines\mbt_01\mbt_01_start_int.ogg",0.5,1};
+		soundengineonext[] = {"\wog_idf_c_vehicles\sounds\land_vehicles\engines\mbt_01\mbt_01_start_ext.ogg",0.5,1,125};
+		soundengineoffint[] = {"\wog_idf_c_vehicles\sounds\land_vehicles\engines\mbt_01\mbt_01_shut_int.ogg",0.5,1};
+		soundengineoffext[] = {"\wog_idf_c_vehicles\sounds\land_vehicles\engines\mbt_01\mbt_01_shut_ext.ogg",0.5,1,100};
+		class sounds
+		{
+			soundsetsint[] = {"jsrs_mbt_01_idle_interior_soundset","jsrs_mbt_01_low_interior_soundset","jsrs_mbt_01_high_interior_soundset","jsrs_mbt_01_start_interior_soundset","jsrs_tracked_rolling_int_soundset","jsrs_tracked_offroad_rolling_int_soundset","jsrs_vehicle_interior_silent_soundset","jsrs_heavy_vehicle_rain_int_soundset","jsrs_tracked_rattle_int_soundset","jsrs_tracks_slow_int_soundset","jsrs_tracks_fast_int_soundset","jsrs_tracks_grass_int_soundset","jsrs_tracks_dirt_int_soundset","jsrs_gear_interior_04_soundset","jsrs_heavy_vehicle_water_moving_ext_soundset"};
+			soundsetsext[] = {"jsrs_mbt_01_idle_exterior_soundset","jsrs_mbt_01_low_exterior_soundset","jsrs_mbt_01_high_exterior_soundset","jsrs_mbt_01_start_exterior_soundset","jsrs_mbt_01_distance_soundset","jsrs_heavy_vehicle_rain_ext_soundset","jsrs_tracked_rattle_ext_soundset","jsrs_tracks_slow_ext_soundset","jsrs_tracks_fast_ext_soundset","jsrs_tracks_grass_ext_soundset","jsrs_tracks_dirt_ext_soundset","jsrs_gear_exterior_04_soundset","jsrs_heavy_vehicle_water_moving_ext_soundset"};
+		};
 	};
-	class APC_Tracked_01_base_F: Tank_F
+	class APC_Tracked_01_base_F: Tank_F {};
+	class B_APC_Tracked_01_base_F: APC_Tracked_01_base_F
 	{
 		armor = 500;
 		armorStructural = 4.5;
 		weapons[] = {"rhs_weap_smokegen"};
 		magazines[] = {"rhs_mag_smokegen"};
-		hullExplosionDelay[] = {5,15};
+		hullExplosionDelay[] = {2,6};
 		driverOpticsModel = "\rhsusf\addons\rhsusf_optics\data\rhs_periscope_BISType";
 		memoryPointDriverOptics = "driverview_old";
 		redRPM = 2640;
@@ -1011,7 +1022,7 @@ class cfgVehicles
 			class HitLTrack: HitLTrack
 			{
 				material = -1;
-				armorComponent = "";
+				armorComponent = "hit_trackL";
 				name = "hit_trackL_point";
 				visual = "-";
 				radius = 0.2;
@@ -1023,7 +1034,7 @@ class cfgVehicles
 			class HitRTrack: HitRTrack
 			{
 				material = -1;
-				armorComponent = "";
+				armorComponent = "hit_trackR";
 				name = "hit_trackR_point";
 				visual = "-";
 				radius = 0.2;
@@ -1138,15 +1149,17 @@ class cfgVehicles
 				};
 			};
 		};
-	};
-	class B_APC_Tracked_01_base_F: APC_Tracked_01_base_F
-	{
-		class Turrets: Turrets
+		soundengineonint[] = {"\wog_idf_c_vehicles\sounds\land_vehicles\engines\tracked_apc_01\tracked_apc_01_start_int.ogg",0.5,1};
+		soundengineonext[] = {"\wog_idf_c_vehicles\sounds\land_vehicles\engines\tracked_apc_01\tracked_apc_01_start_ext.ogg",0.5,1,125};
+		soundengineoffint[] = {"\wog_idf_c_vehicles\sounds\land_vehicles\engines\tracked_apc_01\tracked_apc_01_shut_int.ogg",0.5,1};
+		soundengineoffext[] = {"\wog_idf_c_vehicles\sounds\land_vehicles\engines\tracked_apc_01\tracked_apc_01_shut_ext.ogg",0.5,1,100};
+		class sounds
 		{
-			class MainTurret: MainTurret{};
-			class CommanderOptics: CommanderOptics{};
+			soundsetsint[] = {"jsrs_tracked_apc_01_idle_interior_soundset","jsrs_tracked_apc_01_low_interior_soundset","jsrs_tracked_apc_01_high_interior_soundset","jsrs_tracked_apc_01_start_interior_soundset","jsrs_tracked_rolling_int_soundset","jsrs_tracked_offroad_rolling_int_soundset","jsrs_vehicle_interior_silent_soundset","jsrs_heavy_vehicle_rain_int_soundset","jsrs_tracked_rattle_int_soundset","jsrs_light_tracks_slow_int_soundset","jsrs_light_tracks_fast_int_soundset","jsrs_light_tracks_grass_int_soundset","jsrs_light_tracks_dirt_int_soundset","jsrs_gear_interior_01_soundset","jsrs_heavy_vehicle_water_moving_ext_soundset"};
+			soundsetsext[] = {"jsrs_tracked_apc_01_idle_exterior_soundset","jsrs_tracked_apc_01_low_exterior_soundset","jsrs_tracked_apc_01_high_exterior_soundset","jsrs_tracked_apc_01_start_exterior_soundset","jsrs_tracked_apc_01_distance_soundset","jsrs_heavy_vehicle_rain_ext_soundset","jsrs_tracked_rattle_ext_soundset","jsrs_light_tracks_slow_ext_soundset","jsrs_light_tracks_fast_ext_soundset","jsrs_light_tracks_grass_ext_soundset","jsrs_light_tracks_dirt_ext_soundset","jsrs_gear_exterior_01_soundset","jsrs_heavy_vehicle_water_moving_ext_soundset"};
 		};
 	};
+
 	class B_APC_Tracked_01_rcws_F: B_APC_Tracked_01_base_F
 	{
 		class Turrets: Turrets
