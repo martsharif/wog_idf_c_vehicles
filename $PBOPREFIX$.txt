@@ -1,0 +1,6 @@
+//<'wog_idf_c_vehicles.pbo' properties via Mikero's dos tools, dll version 7.97>
+prefix=wog_idf_c_vehicles;
+Mikero=DePbo.dll.8.35;
+version=22071019;
+//PboType=Arma Addon;
+//</properties>
